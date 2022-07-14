@@ -1,0 +1,20 @@
+{
+    "name": "wasfyelbaz/php-mvc",
+    "description": "Learning MVC pattern with PHP",
+    "autoload": {
+        "psr-4": {
+          "App\\": "App",
+          "elbaz\\": "src"
+        }
+      },
+    "authors": [
+        {
+            "name": "Wasfy Elbaz",
+            "email": "wasfylbaz@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.4",
+        "symfony/var-dumper": "^5.4"
+    }
+}
