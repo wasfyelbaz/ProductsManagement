@@ -1,6 +1,3 @@
-/*
-Like Laravel's "contracts" it's an interface that define the core service provided for database managing.
-*/
 <?php
 namespace elbaz\Database\Managers\Contracts;
 

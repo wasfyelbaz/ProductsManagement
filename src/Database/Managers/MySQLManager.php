@@ -1,5 +1,5 @@
 <?php
-
+namespace elbaz\Database\Managers;
 use elbaz\Database\Managers\Contracts\DatabaseManager;
 
 class MySQLManager implements DatabaseManager
@@ -17,7 +17,14 @@ class MySQLManager implements DatabaseManager
     }
     public function query(string $query, $values=[])
     {
+        $stmt = self::$instance->prepare($query);
+        for ($i = 1; $i < count($values); $i++)
+        {
+            $stmt->bindValue($i, $values[$i-1]);
+        }
 
+        $stmt->execute();
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
     public function create($data)
     {
@@ -33,7 +40,7 @@ class MySQLManager implements DatabaseManager
     }
     public function delete($id)
     {
-        
+
     }
 
 
